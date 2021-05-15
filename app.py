@@ -8,10 +8,9 @@ import io
 
 app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "*"}})
-app.config['CORS_HEADERS'] = 'Content-Type'
+#app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/summary', methods=['POST'])
-@cross_origin()
 def summarize():
     if request.method == 'POST':
 
@@ -26,7 +25,6 @@ def summarize():
         #return make_response(jsonify({'error':"not successfull"}) , 500 )  
 
 @app.route('/summaryUrl', methods=['POST'])
-@cross_origin()
 def summarizeUrl():
     if request.method == 'POST':
 
@@ -43,7 +41,6 @@ def summarizeUrl():
 
 
 @app.route('/summaryFile', methods=['POST'])
-@cross_origin()
 def summarizeFile():
     if request.method == 'POST':
 
