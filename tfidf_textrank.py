@@ -25,8 +25,8 @@ def read_file(filepath):
     #print(text)
     return text
 
-text = read_file("msft.txt")
-text
+# text = read_file("msft.txt")
+# text
 
 def remove_shortword(sentences):
   
