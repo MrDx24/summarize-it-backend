@@ -10,6 +10,11 @@ app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "*"}})
 app.config['CORS_HEADERS'] = 'Content-Type'
 
+@app.route('/')
+@cross_origin()
+def check():
+     return "Hello world!!!!"
+
 @app.route('/summary', methods=['POST'])
 @cross_origin()
 def summarize():
